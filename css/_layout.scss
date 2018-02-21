@@ -1,0 +1,34 @@
+// Helpers
+.d-ib {
+  display: inline-block;
+}
+
+.d-b {
+  display: block;
+}
+
+.m-15-0 {
+  margin: 15px 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+
+// Mixins
+@mixin bg-size($size) {
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Default
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

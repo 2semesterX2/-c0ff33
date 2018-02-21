@@ -1,0 +1,232 @@
+@import '~mdi/css/materialdesignicons.css';
+@import '~materialize-css/bin/materialize.css';
+@import './layout';
+
+// Vars
+// Colors
+$green: #189681;
+$red: #DC324F;
+$white: #fff;
+$black: #000;
+$gray: #CFCFCF;
+$white-transparent: rgba(255, 255, 255, .3);
+
+body {
+    overflow: hidden;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .video {
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        transform: scale(1.2)
+    }
+
+    .center-decoration {
+        width: calc(70% - 70px);
+        height: calc(100% - 140px);
+        position: absolute;
+        left: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: -40px;
+            top: -40px;
+            background-color: $green;
+            z-index: 2;
+        }
+
+        .title-wrapper {
+            height: 100%;
+            width: 100px;
+            position: relative;
+        }
+
+        .title {
+            display: inline;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            transform: rotate(90deg) translateX(50%);
+            transform-origin: 50% 0;
+            color: white;
+            font-size: 5em;
+            line-height: 1em;
+        }
+    }
+
+    .aside {
+        height: 100vh;
+        width: 30%;
+        position: fixed;
+        z-index: 3;
+        right: 0;
+        background-color: white;
+
+        .title-container {
+            width: calc(100% - 210px);
+            position: absolute;
+            left: 0;
+            top: 70px;
+            transform: translateY(-50%);
+            text-align: right;
+            color: $white;
+            font-size: 2em;
+            line-height: 1em;
+        }
+
+        .aside-header {
+            height: 70px;
+
+            .big-decoration {
+                width: calc(100% - 210px);
+                height: 100%;
+                position: relative;
+                background-color: $red;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    width: 35px;
+                    position: absolute;
+                    left: -35px;
+                    background-color: #983042;
+                    z-index: 3;
+                }
+            }
+
+            .small-decoration {
+                width: 70px;
+                height: 100%;
+
+                &:nth-of-type(2) {
+                    background-color: $green;
+                }
+
+                &:nth-of-type(3) {
+                    background-color: lighten($green, 20%);
+                }
+
+                &:nth-of-type(4) {
+                    background-color: lighten($green, 30%);
+                }
+            }
+
+        }
+
+        .aside-image {
+            @include bg-size(cover);
+            height: calc(50% - 35px);
+            background-color: blue;
+        }
+
+        .carousel-container {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 35px;
+                position: absolute;
+                left: -35px;
+                top: 50px;
+                background-color: $gray;
+                z-index: 3;
+            }
+
+            .image-section {
+                height: 100%;
+
+                .control {
+                    height: 50px;
+                    width: 50%;
+                    background-color: $gray;
+                }
+
+                .control-left {
+                    background-image: url('/assets/previous.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .control-right {
+                    background-image: url('/assets/next.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .carousel-image {
+                    @include bg-size(cover);
+                    height: calc(100% - 50px);
+                }
+            }
+
+            .carousel-content {
+                height: 100%;
+                width: 49%;
+                margin-left: 30px;
+                text-align: right;
+
+                .title {
+                    font-weight: bold;
+                }
+
+                .text {
+                    width: 80%;
+                    float: right;
+                }
+
+                .name {
+                    margin-bottom: 0;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+.p-abs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+
+
+.f-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mySlides3 {
+    padding: 1.5em;
+
+    .t-title {
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    .t-text {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .t-name {
+        font-style: italic;
+
+    }
+}

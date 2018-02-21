@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Greg McQueen Photography</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/slider.css">
+
+    <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/lightslider.js"></script>
+
+</head>
+
+<body onload="onload();">
+
+    <div id="wrapper">
+        <div class="page-container flex-row">
+            <!--TODO: add video-->
+            <video class="video d-ib" id="idle_video" onended="onVideoEnded();">
+             </video>
+
+            <div class="center-decoration">
+                <div class="title-wrapper">
+                    <h1 class="title">
+                        Greg McQueen
+                    </h1>
+                </div>
+            </div>
+
+            <div class="aside d-ib" id="aside">
+                <div class="aside-header flex-row">
+                    <div class="big-decoration d-ib">
+                    </div>
+                    <div class="small-decoration d-ib">
+                    </div>
+                    <div class="small-decoration d-ib">
+                    </div>
+                    <div class="small-decoration d-ib">
+                    </div>
+                </div>
+
+                <div class="title-container">
+                    <h3 class="title">
+                        Perfectly <br>
+                        <span class="after-title">Imperfect.</span>
+                    </h3>
+                </div>
+
+                <!--TODO: add img-->
+                <div class="w3-content w3-section" style="max-width:500px">
+                    <img class="mySlides2 aside-image d-b" src="assets/image_slider_01.webp" style="width:100%">
+                    <img class="mySlides2 aside-image d-b" src="assets/image_slider_02.webp" style="width:100%">
+                    <img class="mySlides2 aside-image d-b" src="assets/image_slider_03.webp" style="width:100%">
+                </div>
+                <div class="carousel-container flex-row">
+                    <div class="image-section d-ib">
+                        <div class="flex-row">
+                            <div class="control control-left d-ib">
+                            </div>
+                            <div class="control control-right d-ib">
+                            </div>
+                        </div>
+                        <!-- slider test -->
+                        <div class="f-row">
+                            <div class="w3-content w3-section" style="max-width:500px">
+                                <img class="mySlides" src="assets/portrait_01.jpg">
+                                <img class="mySlides" src="assets/portrait_02.jpg">
+                            </div>
+                            <div class="w3-content w3-section" style="max-width:500px">
+                                <div class="mySlides3">
+                                    <h3 class="t-title">Awesome!</h3>
+                                    <p class="t-text">“I thoroughly recommend Greg. I spoke with several other photographers, however, none of them showed the same level of passion and interest when it came to our wedding day.”</p>
+                                    <p class="t-name">Pernille Meyer</p>
+                                </div>
+                                <div class="mySlides3">
+                                    <h3 class="t-title">Great!</h3>
+                                    <p class="t-text">I really recommend Greg. Not only is he a skilled photographer but he is also very thorough. He is all in all very professional and the results are fantastic.”</p>
+                                    <p class="t-name">Steffen Tonning Jensen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            var myIndex2 = 0;
+                            carousel2();
+
+                            function carousel2() {
+                                var j;
+                                var y = document.getElementsByClassName("mySlides2");
+                                for (j = 0; j < y.length; j++) {
+                                    y[j].style.display = "none";
+                                }
+                                myIndex2++;
+                                if (myIndex2 > y.length) {
+                                    myIndex2 = 1
+                                }
+                                y[myIndex2 - 1].style.display = "block";
+                                setTimeout(carousel2, 8000); // Change image every 2 seconds
+                            }
+                        </script>
+                        <script>
+                            var myIndex = 0;
+                            carousel();
+
+                            function carousel() {
+                                var i;
+                                var y = document.getElementsByClassName("mySlides");
+                                for (i = 0; i < y.length; i++) {
+                                    y[i].style.display = "none";
+                                }
+                                myIndex++;
+                                if (myIndex > y.length) {
+                                    myIndex = 1
+                                }
+                                y[myIndex - 1].style.display = "block";
+                                setTimeout(carousel, 2000); // Change image every 2 seconds
+                            }
+                        </script>
+                        <script>
+                            var myIndex3 = 0;
+                            carousel();
+
+                            function carousel() {
+                                var i;
+                                var y = document.getElementsByClassName("mySlides3");
+                                for (i = 0; i < y.length; i++) {
+                                    y[i].style.display = "none";
+                                }
+                                myIndex3++;
+                                if (myIndex3 > y.length) {
+                                    myIndex3 = 1
+                                }
+                                y[myIndex3 - 1].style.display = "block";
+                                setTimeout(carousel, 2000); // Change image every 2 seconds
+                            }
+                        </script>
+                        <!-- slider test -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <audio volume="10%" src="assets/background_music.mp3" id="myaudio" autoplay></audio>
+
+    <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.07;
+    </script>
+    <!-- set audio voulume -->
+    <script>
+        var video_list = ["assets/1.mp4",
+            "assets/2.mp4",
+            "assets/3.mp4"
+        ];
+        var video_index = 0;
+        var video_player = null;
+
+        function onload() {
+            console.log("body loaded");
+            video_player = document.getElementById("idle_video");
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+        }
+
+        function onVideoEnded() {
+            console.log("video ended");
+            if (video_index < video_list.length - 1) {
+                video_index++;
+            } else {
+                video_index = 0;
+            }
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+        }
+    </script>
+    <!-- play more videos -->
+
+</body>
+
+</html>

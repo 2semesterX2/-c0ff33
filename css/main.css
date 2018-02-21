@@ -1,0 +1,259 @@
+@import url(~mdi/css/materialdesignicons.css);
+@import url(~materialize-css/bin/materialize.css);
+/* line 2, _layout.scss */
+.d-ib {
+  display: inline-block;
+}
+
+/* line 6, _layout.scss */
+.d-b {
+  display: block;
+}
+
+/* line 10, _layout.scss */
+.m-15-0 {
+  margin: 15px 0;
+}
+
+/* line 14, _layout.scss */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+
+/* line 30, _layout.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, main.scss */
+body {
+  overflow: hidden;
+}
+
+/* line 18, main.scss */
+.page-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 23, main.scss */
+.page-container .video {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  transform: scale(1.2);
+}
+/* line 30, main.scss */
+.page-container .center-decoration {
+  width: calc(70% - 70px);
+  height: calc(100% - 140px);
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+/* line 39, main.scss */
+.page-container .center-decoration::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: -40px;
+  top: -40px;
+  background-color: #189681;
+  z-index: 2;
+}
+/* line 51, main.scss */
+.page-container .center-decoration .title-wrapper {
+  height: 100%;
+  width: 100px;
+  position: relative;
+}
+/* line 57, main.scss */
+.page-container .center-decoration .title {
+  display: inline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  transform: rotate(90deg) translateX(50%);
+  transform-origin: 50% 0;
+  color: white;
+  font-size: 5em;
+  line-height: 1em;
+}
+/* line 71, main.scss */
+.page-container .aside {
+  height: 100vh;
+  width: 30%;
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  background-color: white;
+}
+/* line 79, main.scss */
+.page-container .aside .title-container {
+  width: calc(100% - 210px);
+  position: absolute;
+  left: 0;
+  top: 70px;
+  transform: translateY(-50%);
+  text-align: right;
+  color: white;
+  font-size: 2em;
+  line-height: 1em;
+}
+/* line 91, main.scss */
+.page-container .aside .aside-header {
+  height: 70px;
+}
+/* line 94, main.scss */
+.page-container .aside .aside-header .big-decoration {
+  width: calc(100% - 210px);
+  height: 100%;
+  position: relative;
+  background-color: #dc324f;
+}
+/* line 100, main.scss */
+.page-container .aside .aside-header .big-decoration:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 35px;
+  position: absolute;
+  left: -35px;
+  background-color: #983042;
+  z-index: 3;
+}
+/* line 112, main.scss */
+.page-container .aside .aside-header .small-decoration {
+  width: 70px;
+  height: 100%;
+}
+/* line 116, main.scss */
+.page-container .aside .aside-header .small-decoration:nth-of-type(2) {
+  background-color: #189681;
+}
+/* line 120, main.scss */
+.page-container .aside .aside-header .small-decoration:nth-of-type(3) {
+  background-color: #35dfc2;
+}
+/* line 124, main.scss */
+.page-container .aside .aside-header .small-decoration:nth-of-type(4) {
+  background-color: #61e6d0;
+}
+/* line 131, main.scss */
+.page-container .aside .aside-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(50% - 35px);
+  background-color: blue;
+}
+/* line 137, main.scss */
+.page-container .aside .carousel-container {
+  position: relative;
+}
+/* line 140, main.scss */
+.page-container .aside .carousel-container::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 35px;
+  position: absolute;
+  left: -35px;
+  top: 50px;
+  background-color: #cfcfcf;
+  z-index: 3;
+}
+/* line 152, main.scss */
+.page-container .aside .carousel-container .image-section {
+  height: 100%;
+}
+/* line 155, main.scss */
+.page-container .aside .carousel-container .image-section .control {
+  height: 50px;
+  width: 50%;
+  background-color: #cfcfcf;
+}
+/* line 161, main.scss */
+.page-container .aside .carousel-container .image-section .control-left {
+  background-image: url("/assets/previous.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 167, main.scss */
+.page-container .aside .carousel-container .image-section .control-right {
+  background-image: url("/assets/next.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 173, main.scss */
+.page-container .aside .carousel-container .image-section .carousel-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100% - 50px);
+}
+/* line 179, main.scss */
+.page-container .aside .carousel-container .carousel-content {
+  height: 100%;
+  width: 49%;
+  margin-left: 30px;
+  text-align: right;
+}
+/* line 185, main.scss */
+.page-container .aside .carousel-container .carousel-content .title {
+  font-weight: bold;
+}
+/* line 189, main.scss */
+.page-container .aside .carousel-container .carousel-content .text {
+  width: 80%;
+  float: right;
+}
+/* line 194, main.scss */
+.page-container .aside .carousel-container .carousel-content .name {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* line 203, main.scss */
+.p-abs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+/* line 212, main.scss */
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 217, main.scss */
+.mySlides3 {
+  padding: 1.5em;
+}
+/* line 220, main.scss */
+.mySlides3 .t-title {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+/* line 224, main.scss */
+.mySlides3 .t-text {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+/* line 228, main.scss */
+.mySlides3 .t-name {
+  font-style: italic;
+}
